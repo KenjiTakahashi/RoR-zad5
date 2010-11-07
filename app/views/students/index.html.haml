@@ -1,4 +1,12 @@
 %h1 students
+- form_for @search, :url => students_path, :html => { :method => :get } do |f|
+  = f.label :Year
+  = f.select :year_id_eq, (@years.collect { |c| [c.year, c.id]}), :include_blank => true
+  = f.label :Name
+  = f.text_field :name_contains, :size => 16
+  = f.label :Surname
+  = f.text_field :surname_contains, :size => 16
+  = f.submit "Search"
 %table
   %tr
     %th
