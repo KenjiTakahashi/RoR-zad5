@@ -1,0 +1,11 @@
+%h1
+  = @student.name
+  = @student.surname
+  's subjects
+- @student.subjects.each do |s|
+  %p
+    = s.name
+    = link_to 'Edit', edit_student_subject_path(@student, s)
+    = link_to 'Delete', student_subject_path(@student, s), :confirm => 'Are you sure?', :method => :delete
+%p= link_to 'Add new', new_student_subject_path(@student)
+%p= link_to 'Back to students', students_path

@@ -1,0 +1,11 @@
+!!! 5
+%html
+  %head
+    %title
+      = controller.action_name
+  %body
+    = error_messages_for "subject"
+    - flash.each do |k, v|
+      %div{:class => "flash #{k}"}
+        = v
+    = yield

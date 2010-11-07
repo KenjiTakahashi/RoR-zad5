@@ -1,0 +1,9 @@
+%p
+  = f.label :Year
+  = f.select :year_id, (@years.collect {|c| [c.year, c.id]}), :required => true
+%p
+  = f.label :Name
+  = f.text_field :name
+%p
+  = f.label :Surname
+  = f.text_field :surname

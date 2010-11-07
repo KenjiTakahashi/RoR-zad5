@@ -1,0 +1,8 @@
+%h1
+  Update subject for
+  = @subject.student.name
+  = @subject.student.surname
+- form_for([@subject.student, @subject]) do |f|
+  = render :partial => "form", :locals => {:f => f}
+  = f.submit "Update"
+= link_to "Back", @subject.student

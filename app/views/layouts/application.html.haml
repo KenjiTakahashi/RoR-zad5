@@ -1,0 +1,9 @@
+!!! 5
+%html
+  %head
+    %title
+      = controller.action_name
+  %body
+    %p.notice= flash[:notice]
+    %p.alert= flash[:alert]
+    = yield

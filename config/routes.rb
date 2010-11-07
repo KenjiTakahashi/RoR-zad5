@@ -1,4 +1,15 @@
 RoRZad5::Application.routes.draw do
+  devise_for :users
+  resources :students do
+    resources :subjects
+  end
+  namespace :admin do
+    resources :years
+  end
+  #match '/' => 'students#index'
+  root :to => 'students#index'
+  match '/admin/years' => 'admin/years#index', :as => :user_root
+  # match '/:controller(/:action(/:id))'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

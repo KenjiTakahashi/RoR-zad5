@@ -1,0 +1,27 @@
+%h1 students
+%table
+  %tr
+    %th
+      Year
+    %th
+      Name
+    %th
+      Surname
+    %th
+      Actions
+  - @students.each do |s|
+    %tr
+      %td
+        - if s.year
+          = s.year.year
+      %td
+        = s.name
+      %td
+        = s.surname
+      %td
+        = link_to "Edit", edit_student_path(s)
+        = link_to 'Delete', s, :confirm => 'Are you sure?', :method => :delete
+        = link_to 'Subjects', s
+%p= link_to 'Add new', new_student_path
+%p= link_to "Years panel", admin_years_path
+%p= link_to "Sign up", new_user_registration_path
