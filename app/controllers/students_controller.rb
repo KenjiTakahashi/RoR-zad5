@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   def index
     @search = Student.search(params[:search])
-    @students = @search.all
+    @students = @search.paginate :page => params[:page], :per_page => 3
     @years = Year.all
   end
   def show
