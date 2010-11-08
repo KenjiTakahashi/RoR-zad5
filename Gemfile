@@ -11,8 +11,12 @@ gem 'warden'
 gem 'devise'
 gem 'will_paginate'
 gem 'meta_search'
-gem 'rspec-rails'
 gem 'dynamic_form'
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'machinist', '>= 2.0.0.beta2'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'

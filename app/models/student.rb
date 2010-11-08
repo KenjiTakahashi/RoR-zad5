@@ -3,10 +3,7 @@ class Student < ActiveRecord::Base
   validates_presence_of :name, :surname
   has_many :subjects, :dependent => :destroy
   belongs_to :year
-  def after_find
-    # "They" say it's slow, so "for testing purposes only ;)"
-    decipher
-  end
+  after_find :decipher
 private
   def cipher
     begin
